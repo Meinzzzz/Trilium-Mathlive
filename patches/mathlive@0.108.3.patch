@@ -1,0 +1,32 @@
+diff --git a/mathlive.js b/mathlive.js
+index dddc4318a921dbb7196e6060c66e108a7ddd0db4..fda94095ca038467bf9173937873e6430071a237 100644
+--- a/mathlive.js
++++ b/mathlive.js
+@@ -38970,9 +38970,9 @@ data-command='["setEnvironment","pmatrix"]'>
+     if (offset < first || offset > last) return false;
+     if (!atom.hasChildren) return true;
+     const firstChild = includeFirstAtoms ? atom.firstChild : firstNonFirstChild(atom);
+-    if (!firstChild) return false;
++    if (!firstChild) return true;
+     const lastChild = includeFirstAtoms ? atom.lastChild : lastNonFirstChild(atom);
+-    if (!lastChild) return false;
++    if (!lastChild) return true;
+     const firstOffset = model.offsetOf(firstChild);
+     if (firstOffset >= first && firstOffset <= last) {
+       const lastOffset = model.offsetOf(lastChild);
+diff --git a/mathlive.mjs b/mathlive.mjs
+index 2f1b1920232bf6413af8eb297d5a9a09dd29a0c1..7943bff6e72f081c96add7715c72d1e2c86be113 100644
+--- a/mathlive.mjs
++++ b/mathlive.mjs
+@@ -38930,9 +38930,9 @@ function atomIsInRange(model, atom, first, last, includeFirstAtoms) {
+   if (offset < first || offset > last) return false;
+   if (!atom.hasChildren) return true;
+   const firstChild = includeFirstAtoms ? atom.firstChild : firstNonFirstChild(atom);
+-  if (!firstChild) return false;
++  if (!firstChild) return true;
+   const lastChild = includeFirstAtoms ? atom.lastChild : lastNonFirstChild(atom);
+-  if (!lastChild) return false;
++  if (!lastChild) return true;
+   const firstOffset = model.offsetOf(firstChild);
+   if (firstOffset >= first && firstOffset <= last) {
+     const lastOffset = model.offsetOf(lastChild);
